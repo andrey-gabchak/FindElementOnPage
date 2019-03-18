@@ -1,6 +1,5 @@
 package com.gabchak.jsoup;
 
-import com.gabchak.exceptions.ElementNotFoundExeption;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

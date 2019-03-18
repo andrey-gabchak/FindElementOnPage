@@ -1,4 +1,4 @@
-package com.gabchak.main;
+package com.gabchak;
 
 import com.gabchak.jsoup.JsoupService;
 import org.jsoup.nodes.Element;
