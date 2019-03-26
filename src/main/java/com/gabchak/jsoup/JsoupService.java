@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 
 
 public class JsoupService {
@@ -36,8 +35,6 @@ public class JsoupService {
         return result;
     }
 
-
-
     private Elements findSimilarElements(String filePath, Element originalElement) throws IOException {
 
         Document document = getDocument(filePath);
@@ -47,22 +44,9 @@ public class JsoupService {
         if (elementById != null) {
             result.add(elementById);
         } else {
-            Elements elementsByClass = document.getElementsByClass(originalElement.className());
-            if (!elementsByClass.isEmpty()) {
-                result.addAll(elementsByClass);
-            } else {
-                Elements titleElements = document
-                        .getElementsByAttributeValueContaining("title",
-                                originalElement.attr("title"));
-                if (!titleElements.isEmpty()) {
-                    result.addAll(titleElements);
-                } else {
-                    Elements elementsContainingText = document.getElementsContainingText(originalElement.text());
-                    if (!elementsContainingText.isEmpty()) {
-                        result.addAll(elementsContainingText);
-                    }
-                }
-            }
+            result.addAll(
+                    document
+                            .getElementsByAttributeValueContaining("onclick", "window.ok"));
         }
 
         return result;
