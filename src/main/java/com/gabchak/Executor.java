@@ -23,7 +23,7 @@ public class Executor {
 
 
         similarElements.forEach(element -> System.out.println(
-                Factory.getOutputService().getPathAsString(element)));
+                Factory.getOutputService().outputItem(element)));
     }
 
 

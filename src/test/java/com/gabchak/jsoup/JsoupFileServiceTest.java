@@ -1,12 +1,14 @@
 package com.gabchak.jsoup;
 
 import com.gabchak.Factory;
+import com.gabchak.services.OutputService;
+import com.gabchak.services.impl.OutputConsoleService;
 import org.jsoup.select.Elements;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class JsoupServiceTest {
+class JsoupFileServiceTest {
 
     @Test
     void getSimilarElements() {
@@ -27,9 +29,9 @@ class JsoupServiceTest {
 
         OutputService outputService = Factory.getOutputService();
 
-        assertEquals(expected0, outputService.getPathAsString(similarElements.get(0)));
-        assertEquals(expected1, outputService.getPathAsString(similarElements.get(1)));
-        assertEquals(expected2, outputService.getPathAsString(similarElements.get(2)));
-        assertEquals(expected3, outputService.getPathAsString(similarElements.get(3)));
+        assertEquals(expected0, outputService.outputItem(similarElements.get(0)));
+        assertEquals(expected1, outputService.outputItem(similarElements.get(1)));
+        assertEquals(expected2, outputService.outputItem(similarElements.get(2)));
+        assertEquals(expected3, outputService.outputItem(similarElements.get(3)));
     }
 }

@@ -1,11 +1,13 @@
-package com.gabchak.jsoup;
+package com.gabchak.services.impl;
 
+import com.gabchak.services.OutputService;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class OutputService {
+public class OutputConsoleService implements OutputService {
 
-    public String getPathAsString(Element element) {
+    @Override
+    public String outputItem(Element element) {
         StringBuilder stringBuilder = new StringBuilder();
         Elements parents = element.parents();
 

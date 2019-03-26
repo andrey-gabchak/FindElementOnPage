@@ -1,6 +1,7 @@
-package com.gabchak.jsoup;
+package com.gabchak.services.impl;
 
 import com.gabchak.Executor;
+import com.gabchak.services.JsoupService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,12 +13,13 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class JsoupService {
+public class JsoupFileService implements JsoupService {
 
     private final static String CHARSET_NAME = "utf8";
 
     private static Logger LOGGER = LoggerFactory.getLogger(Executor.class);
 
+    @Override
     public Elements getSimilarElements(String originalFilePath, String originalElementId, String[] filePathsForSearch) {
 
         Elements result = new Elements();
